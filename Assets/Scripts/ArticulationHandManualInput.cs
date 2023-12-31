@@ -10,13 +10,12 @@ public class ArticulationHandManualInput : NetworkBehaviour
     void Update()
     {
         // manual input
-        if (IsOwner)
+        if (!IsOwner)
         {
-            //float input = Input.GetAxis("Fingers");
-            //PincherController pincherController = hand.GetComponent<PincherController>();
-            //pincherController.gripState = GripStateForInput(input);
-            PincherMovementServerRpc();
+            return;
         }
+
+        PincherMovementServerRpc();
     }
 
 

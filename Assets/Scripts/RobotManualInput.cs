@@ -10,10 +10,12 @@ public class RobotManualInput : NetworkBehaviour
 
     void Update()
     {
-        if (IsOwner)
+        if (!IsOwner)
         {
-            ControlRobotServerRpc();
+            return;
         }
+        
+        ControlRobotServerRpc();
     }
     
     [ServerRpc(RequireOwnership = false)]
